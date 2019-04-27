@@ -1,0 +1,20 @@
+{
+  "name": "@properly-styled/example-emotion",
+  "version": "0.0.0",
+  "author": "Jarid Margolin <jaridmargolin@gmail.com>",
+  "description": "Emotion + Properly-Styled = <3",
+  "scripts": {},
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
+    "@properly-styled/core": "0.0.0",
+    "@properly-styled/styles": "0.0.0",
+    "emotion-theming": "^10.0.10",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.16",
+    "@types/react-dom": "^16.8.4"
+  }
+}
