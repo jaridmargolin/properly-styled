@@ -1,6 +1,6 @@
 {
   "name": "@properly-styled/categories",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Jarid Margolin <jaridmargolin@gmail.com>",
   "description": "Common style categories for use with properly-styled",
   "license": "MIT",
@@ -15,8 +15,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@properly-styled/core": "^0.0.0",
-    "@properly-styled/styles": "^0.0.0"
+    "@properly-styled/core": "^0.0.1",
+    "@properly-styled/styles": "^0.0.1"
   },
   "gitHead": "0f258a32cd047b8d42dca1b300a865de6c410371"
 }
