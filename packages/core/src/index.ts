@@ -4,7 +4,7 @@
  * dependencies
  * -------------------------------------------------------------------------- */
 
-import { CombineObjects, Omit, UnionToIntersection } from 'simplytyped'
+import { CombineObjects, GetKey, UnionToIntersection } from 'simplytyped'
 
 /* -----------------------------------------------------------------------------
  * type utils
@@ -17,9 +17,9 @@ type KnownKeys<T> = {
   ? U
   : never
 
-export type GetStyleProps<GenerateFn extends (...args: any) => any> = Omit<
-  Parameters<GenerateFn>[0],
-  'theme'
+export type GetStyleProps<GenerateFn extends (...args: any) => any> = GetKey<
+  GenerateFn,
+  'props'
 >
 
 /* -----------------------------------------------------------------------------
@@ -132,6 +132,7 @@ export interface Style<
   ThemeKey extends string
 > {
   (props: WithTheme<Prop<RuleValue, PropKey, ThemeKey>>): Rules<RuleValue>
+  props: Prop<RuleValue, PropKey, ThemeKey>
   prop: string
   [k: string]: any
 }
@@ -157,6 +158,9 @@ export const style = <
     }))
   }
 
+  // hack to allow easily grabbing props Type from Style
+  generate.props = undefined as any
+
   generate.prop = prop
   return generate
 }
@@ -172,6 +176,7 @@ export interface VariantOptions<PropKey, ThemeKey> {
 
 export interface Variant<PropKey extends string, ThemeKey extends string> {
   (props: WithTheme<Prop<any, PropKey, ThemeKey>>): Rules<any>
+  props: Prop<any, PropKey, ThemeKey>
   prop: string
   [k: string]: any
 }
@@ -187,6 +192,9 @@ export const variant = <PropKey extends string, ThemeKey extends ThemeKeys>({
       ...getScaleValue(val, key ? theme[key] : undefined)
     }))
   }
+
+  // hack to allow easily grabbing props Type from Variant
+  generate.props = undefined as any
 
   generate.prop = prop
   return generate
@@ -207,6 +215,7 @@ export type MapToStyleProps<U> = U extends (...args: any) => any
 
 export interface Group<Generators extends any[]> {
   (props: WithTheme<GetComposedProps<Generators[number]>>): Rules<any>
+  props: GetComposedProps<Generators[number]>
   styles: Styles
   [k: string]: any
 }
@@ -238,6 +247,9 @@ export const compose = <Generators extends any[]>(
         return generateFn ? generateFn(props) : false
       })
       .filter(Boolean)
+
+  // hack to allow easily grabbing props Type from Group
+  generate.props = undefined as any
 
   generate.styles = styles
   return generate

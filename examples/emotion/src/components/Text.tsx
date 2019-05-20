@@ -7,7 +7,7 @@ import * as React from "react";
 import styled from "@emotion/styled";
 
 // properly-styled
-import { compose, GetStyleProps } from "@properly-styled/core";
+import { compose } from "@properly-styled/core";
 import {
   coloringStyles,
   spacingStyles,
@@ -19,7 +19,7 @@ import { font } from "../utils/variants";
 import { GetProps } from "../utils/types";
 
 /* -----------------------------------------------------------------------------
- * Text
+ * StyledText
  * -------------------------------------------------------------------------- */
 
 const textStyles = compose(
@@ -29,10 +29,13 @@ const textStyles = compose(
   typographyStyles
 );
 
-const StyledText = styled.p<GetStyleProps<typeof textStyles>>(textStyles);
+const StyledText = styled.p<typeof textStyles["props"]>(textStyles);
 
-export type TextProps = GetProps<typeof StyledText>;
-const Text = (props: TextProps) => (
+/* -----------------------------------------------------------------------------
+ * Text
+ * -------------------------------------------------------------------------- */
+
+const Text = (props: GetProps<typeof StyledText>) => (
   <StyledText marginTop="0" marginBottom="0" {...props} />
 );
 
