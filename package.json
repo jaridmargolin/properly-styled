@@ -11,8 +11,7 @@
     "dev": "lerna run dev --parallel",
     "format": "prettier-eslint --write \"**/*.{ts,tsx}\"",
     "lint": "eslint --ext .ts,.tsx packages/* examples/*",
-    "start": "jest --watch",
-    "test": "jest --collectCoverage",
+    "test": "lerna run test",
     "publish:packages": "lerna publish"
   },
   "husky": {

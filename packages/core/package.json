@@ -9,7 +9,8 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "rollup -c ../../config/rollup.js",
-    "dev": "rollup -c ../../config/rollup.js -w"
+    "dev": "rollup -c ../../config/rollup.js -w",
+    "test": "jest --collectCoverage"
   },
   "publishConfig": {
     "access": "public"
