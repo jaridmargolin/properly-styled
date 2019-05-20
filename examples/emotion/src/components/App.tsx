@@ -3,14 +3,23 @@
  * -------------------------------------------------------------------------- */
 
 // 3rd party
-import React from "react";
-import ReactDOM from "react-dom";
+import * as React from "react";
+import { ThemeProvider } from "emotion-theming";
 
 // lib
-import App from "./components/App";
+import theme from "../theme";
+import Text from "./Text";
 
 /* -----------------------------------------------------------------------------
- * render app
+ * App
  * -------------------------------------------------------------------------- */
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <Text textColor="blue" font="f1" margin="0">
+      Properly Styled + Emotion
+    </Text>
+  </ThemeProvider>
+);
+
+export default App;

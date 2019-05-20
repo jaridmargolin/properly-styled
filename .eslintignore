@@ -1,3 +1,6 @@
 # Ignore all "built" files
 **/*/dist/**/*
 **/*/docs/**/*
+
+# Examples run in own env
+**/*/examples/**/*

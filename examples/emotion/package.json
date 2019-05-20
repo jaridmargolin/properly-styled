@@ -1,20 +1,40 @@
 {
-  "name": "@properly-styled/example-emotion",
-  "version": "0.0.0",
-  "author": "Jarid Margolin <jaridmargolin@gmail.com>",
-  "description": "Emotion + Properly-Styled = <3",
-  "scripts": {},
+  "name": "emotion",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
-    "@properly-styled/core": "0.0.0",
-    "@properly-styled/styles": "0.0.0",
+    "@properly-styled/core": "0.0.1",
+    "@properly-styled/styles": "0.0.1",
+    "@types/jest": "24.0.13",
+    "@types/node": "12.0.2",
+    "@types/react": "16.8.17",
+    "@types/react-dom": "16.8.4",
     "emotion-theming": "^10.0.10",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "typescript": "3.4.5"
   },
-  "devDependencies": {
-    "@types/react": "^16.8.16",
-    "@types/react-dom": "^16.8.4"
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

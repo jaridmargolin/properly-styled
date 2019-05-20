@@ -10,7 +10,7 @@
     "build": "lerna run build",
     "dev": "lerna run dev --parallel",
     "format": "prettier-eslint --write \"**/*.{ts,tsx}\"",
-    "lint": "eslint --ext .ts,.tsx packages/* examples/*",
+    "lint": "eslint --ext .ts,.tsx packages/*",
     "test": "lerna run test",
     "publish:packages": "lerna publish"
   },
@@ -20,10 +20,15 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "prettier-eslint --write",
-      "git add",
-      "npm run lint"
+    "linters": {
+      "*.{ts,tsx}": [
+        "prettier-eslint --write",
+        "git add",
+        "npm run lint"
+      ]
+    },
+    "ignore": [
+      "examples/**/*"
     ]
   },
   "devDependencies": {

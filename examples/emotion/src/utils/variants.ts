@@ -2,15 +2,11 @@
  * dependencies
  * -------------------------------------------------------------------------- */
 
-// 3rd party
-import React from "react";
-import ReactDOM from "react-dom";
-
-// lib
-import App from "./components/App";
+// properly-styled
+import { variant } from "@properly-styled/core";
 
 /* -----------------------------------------------------------------------------
- * render app
+ * variants
  * -------------------------------------------------------------------------- */
 
-ReactDOM.render(<App />, document.getElementById("root"));
+export const font = variant({ prop: "font", key: "fonts" });
