@@ -12,7 +12,7 @@
     "format": "prettier-eslint --write \"**/*.{ts,tsx}\"",
     "lint": "eslint --ext .ts,.tsx packages/*",
     "test": "lerna run test",
-    "publish:packages": "lerna publish"
+    "release": "lerna publish"
   },
   "husky": {
     "hooks": {
