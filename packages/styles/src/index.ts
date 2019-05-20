@@ -55,6 +55,10 @@ string
 })
 
 // space
+export const margin = style<CSS.MarginProperty<TLength>, 'margin', 'spaces'>({
+  prop: 'margin',
+  key: 'spaces'
+})
 export const marginTop = style<
 CSS.MarginTopProperty<TLength>,
 'marginTop',
@@ -87,6 +91,12 @@ CSS.MarginRightProperty<TLength>,
   prop: 'marginRight',
   key: 'spaces'
 })
+export const padding = style<CSS.PaddingProperty<TLength>, 'padding', 'spaces'>(
+  {
+    prop: 'padding',
+    key: 'spaces'
+  }
+)
 export const paddingTop = style<
 CSS.PaddingTopProperty<TLength>,
 'paddingTop',
@@ -303,6 +313,10 @@ CSS.LetterSpacingProperty<TLength>,
 })
 
 // borders
+export const border = style<CSS.BorderProperty<TLength>, 'border', 'borders'>({
+  prop: 'border',
+  key: 'borders'
+})
 export const borderWidth = style<
 CSS.BorderWidthProperty<TLength>,
 'borderWidth',

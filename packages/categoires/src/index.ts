@@ -15,6 +15,7 @@ import {
   backgroundPosition,
   backgroundRepeat,
   backgroundSize,
+  border,
   borderBottom,
   borderColor,
   borderLeft,
@@ -41,6 +42,7 @@ import {
   left,
   letterSpacing,
   lineHeight,
+  margin,
   marginBottom,
   marginLeft,
   marginRight,
@@ -53,6 +55,7 @@ import {
   order,
   overflowX,
   overflowY,
+  padding,
   paddingBottom,
   paddingLeft,
   paddingRight,
@@ -94,10 +97,12 @@ export const layoutStyles = compose(
 
 // space
 export const spacingStyles = compose(
+  margin,
   marginTop,
   marginBottom,
   marginLeft,
   marginRight,
+  padding,
   paddingTop,
   paddingBottom,
   paddingLeft,
@@ -156,6 +161,7 @@ export const typographyStyles = compose(
 
 // borders
 export const borderStyles = compose(
+  border,
   borderWidth,
   borderStyle,
   borderColor,
