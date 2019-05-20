@@ -15,5 +15,8 @@
   "publishConfig": {
     "access": "public"
   },
+  "dependencies": {
+    "simplytyped": "^3.1.0"
+  },
   "gitHead": "0f258a32cd047b8d42dca1b300a865de6c410371"
 }

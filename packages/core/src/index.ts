@@ -1,25 +1,21 @@
 /* eslint-disable indent */
+
+/* -----------------------------------------------------------------------------
+ * dependencies
+ * -------------------------------------------------------------------------- */
+
+import { CombineObjects, Omit, UnionToIntersection } from 'simplytyped'
+
 /* -----------------------------------------------------------------------------
  * type utils
  * -------------------------------------------------------------------------- */
 
-export type MappedIdentity<T> = { [K in keyof T]: T[K] }
-
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
-
-export type UnionToIntersection<U> = (U extends any
-  ? (k: U) => void
-  : never) extends ((k: infer I) => void)
-  ? I
-  : never
-
+type ThemeKeys = KnownKeys<Theme> extends never ? string : KnownKeys<Theme>
 type KnownKeys<T> = {
   [K in keyof T]: string extends K ? never : number extends K ? never : K
 } extends { [_ in keyof T]: infer U }
   ? U
   : never
-
-type ThemeKeys = KnownKeys<Theme> extends never ? string : KnownKeys<Theme>
 
 export type GetStyleProps<GenerateFn extends (...args: any) => any> = Omit<
   Parameters<GenerateFn>[0],
@@ -36,12 +32,13 @@ export interface Theme {
   [key: string]: Scale | undefined
 }
 
-// `MappedIdentity` is a workaround for:
+export type ThemeProps = { theme: Theme }
+
+// `CombineObjects` is a workaround for:
 // https://github.com/Microsoft/TypeScript/issues/22255#issue-301276195
-export type WithTheme<StyleProps> = MappedIdentity<
-  {
-    theme: Theme
-  } & Partial<StyleProps>
+export type WithTheme<StyleProps extends object> = CombineObjects<
+  ThemeProps,
+  StyleProps
 >
 
 export type Scale<Value = any> = Record<string, Value>
@@ -53,7 +50,7 @@ export type Breakpoints<Value> = Theme['breakpoints'] extends Scale
 export type ResponsiveValue<Value> = Value | Breakpoints<Value>
 
 export type Prop<RuleValue, PropKey extends string, ThemeKey extends string> = {
-  [k in PropKey]: PropValue<RuleValue, ThemeKey>
+  [k in PropKey]?: PropValue<RuleValue, ThemeKey>
 }
 
 export type PropValue<RuleValue, ThemeKey extends string> = ResponsiveValue<
