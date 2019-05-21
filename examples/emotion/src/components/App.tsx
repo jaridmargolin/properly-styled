@@ -16,9 +16,7 @@ import Text from "./Text";
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <Text textColor="blue" font="f1" margin="0">
-      Properly Styled + Emotion
-    </Text>
+    <Text textColor="blue">Properly Styled + Emotion</Text>
   </ThemeProvider>
 );
 

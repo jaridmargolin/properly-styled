@@ -9,8 +9,8 @@ const theme = {
     desktop: "1024px"
   },
   colors: {
-    blue: "rgba(0, 0, 1)",
-    red: "rgba(0, 0, 0)"
+    blue: "rgba(49, 110, 232, 1)",
+    red: "rgba(232, 49, 49, 1)"
   },
   fontSizes: {
     s10: "10px",
@@ -23,10 +23,11 @@ const theme = {
     auto: "auto"
   },
   fonts: {
-    f1: {
+    "s16.normal": {
       fontFamily:
         '"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
-      fontSize: "12px"
+      fontSize: "16px",
+      fontWeight: 400
     }
   }
 };

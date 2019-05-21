@@ -4,10 +4,9 @@
 
 // 3rd party
 import * as React from "react";
-import styled from "@emotion/styled";
 
 // properly-styled
-import { compose } from "@properly-styled/core";
+import properlyStyled, { PropsOf } from "@properly-styled/emotion";
 import {
   coloringStyles,
   spacingStyles,
@@ -16,27 +15,24 @@ import {
 
 // lib
 import { font } from "../utils/variants";
-import { GetProps } from "../utils/types";
 
 /* -----------------------------------------------------------------------------
  * StyledText
  * -------------------------------------------------------------------------- */
 
-const textStyles = compose(
+const StyledText = properlyStyled("p")(
   font,
   coloringStyles,
   spacingStyles,
   typographyStyles
 );
 
-const StyledText = styled.p<typeof textStyles["props"]>(textStyles);
-
 /* -----------------------------------------------------------------------------
  * Text
  * -------------------------------------------------------------------------- */
 
-const Text = (props: GetProps<typeof StyledText>) => (
-  <StyledText marginTop="0" marginBottom="0" {...props} />
+const Text = (props: PropsOf<typeof StyledText>) => (
+  <StyledText marginTop="0" marginBottom="0" font="s16.normal" {...props} />
 );
 
 export default Text;
