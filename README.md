@@ -10,6 +10,11 @@
   <a href="https://npmjs.org/package/properly-styled"><img src="https://img.shields.io/npm/v/properly-styled.svg" alt="NPM properly-styled package"></a>
   </div>
   <br>
+  <div>
+    <a href="https://codesandbox.io/s/properlystyled-dz8o1">
+      Try it Out
+    </a>
+  </div>
 </div>
 <br>
 
