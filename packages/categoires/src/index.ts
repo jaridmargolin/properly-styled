@@ -15,6 +15,7 @@ import {
   backgroundPosition,
   backgroundRepeat,
   backgroundSize,
+  bg,
   border,
   borderBottom,
   borderColor,
@@ -42,6 +43,7 @@ import {
   left,
   letterSpacing,
   lineHeight,
+  m,
   margin,
   marginBottom,
   marginLeft,
@@ -49,18 +51,27 @@ import {
   marginTop,
   maxHeight,
   maxWidth,
+  mb,
   minHeight,
   minWidth,
+  ml,
+  mr,
+  mt,
   opacity,
   order,
   overflowX,
   overflowY,
+  p,
   padding,
   paddingBottom,
   paddingLeft,
   paddingRight,
   paddingTop,
+  pb,
+  pl,
   position,
+  pr,
+  pt,
   right,
   textAlign,
   textColor,
@@ -106,7 +117,17 @@ export const spacingStyles = compose(
   paddingTop,
   paddingBottom,
   paddingLeft,
-  paddingRight
+  paddingRight,
+  m,
+  mt,
+  mb,
+  ml,
+  mr,
+  p,
+  pt,
+  pb,
+  pl,
+  pr
 )
 
 // size
@@ -123,7 +144,8 @@ export const sizingStyles = compose(
 export const coloringStyles = compose(
   textColor,
   backgroundColor,
-  opacity
+  opacity,
+  bg
 )
 
 // flex item

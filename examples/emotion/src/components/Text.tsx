@@ -32,7 +32,7 @@ const StyledText = properlyStyled("p")(
  * -------------------------------------------------------------------------- */
 
 const Text = (props: PropsOf<typeof StyledText>) => (
-  <StyledText marginTop="0" marginBottom="0" font="s16.normal" {...props} />
+  <StyledText mt="0" mb="0" font="s16.normal" {...props} />
 );
 
 export default Text;

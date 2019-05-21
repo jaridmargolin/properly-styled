@@ -130,6 +130,48 @@ CSS.PaddingRightProperty<TLength>,
   key: 'spaces'
 })
 
+// space aliases
+export const m = style<CSS.MarginProperty<TLength>, 'm', 'spaces'>({
+  prop: 'm',
+  key: 'spaces'
+})
+export const mt = style<CSS.MarginTopProperty<TLength>, 'mt', 'spaces'>({
+  prop: 'mt',
+  key: 'spaces'
+})
+export const mb = style<CSS.MarginBottomProperty<TLength>, 'mb', 'spaces'>({
+  prop: 'mb',
+  key: 'spaces'
+})
+export const ml = style<CSS.MarginLeftProperty<TLength>, 'ml', 'spaces'>({
+  prop: 'ml',
+  key: 'spaces'
+})
+export const mr = style<CSS.MarginRightProperty<TLength>, 'mr', 'spaces'>({
+  prop: 'mr',
+  key: 'spaces'
+})
+export const p = style<CSS.PaddingProperty<TLength>, 'p', 'spaces'>({
+  prop: 'p',
+  key: 'spaces'
+})
+export const pt = style<CSS.PaddingTopProperty<TLength>, 'pt', 'spaces'>({
+  prop: 'pt',
+  key: 'spaces'
+})
+export const pb = style<CSS.PaddingBottomProperty<TLength>, 'pb', 'spaces'>({
+  prop: 'pb',
+  key: 'spaces'
+})
+export const pl = style<CSS.PaddingLeftProperty<TLength>, 'pl', 'spaces'>({
+  prop: 'pl',
+  key: 'spaces'
+})
+export const pr = style<CSS.PaddingRightProperty<TLength>, 'pr', 'spaces'>({
+  prop: 'pr',
+  key: 'spaces'
+})
+
 // size
 export const width = style<CSS.WidthProperty<TLength>, 'width', 'widths'>({
   prop: 'width',
@@ -249,6 +291,12 @@ CSS.BackgroundColorProperty,
 })
 export const opacity = style<CSS.GlobalsNumber, 'opacity', string>({
   prop: 'opacity'
+})
+
+// color aliases
+export const bg = style<CSS.BackgroundColorProperty, 'bg', 'colors'>({
+  prop: 'bg',
+  key: 'colors'
 })
 
 // typography
