@@ -133,42 +133,52 @@ CSS.PaddingRightProperty<TLength>,
 // space aliases
 export const m = style<CSS.MarginProperty<TLength>, 'm', 'spaces'>({
   prop: 'm',
+  cssProperty: 'margin',
   key: 'spaces'
 })
 export const mt = style<CSS.MarginTopProperty<TLength>, 'mt', 'spaces'>({
   prop: 'mt',
+  cssProperty: 'marginTop',
   key: 'spaces'
 })
 export const mb = style<CSS.MarginBottomProperty<TLength>, 'mb', 'spaces'>({
   prop: 'mb',
+  cssProperty: 'marginBottom',
   key: 'spaces'
 })
 export const ml = style<CSS.MarginLeftProperty<TLength>, 'ml', 'spaces'>({
   prop: 'ml',
+  cssProperty: 'marginLeft',
   key: 'spaces'
 })
 export const mr = style<CSS.MarginRightProperty<TLength>, 'mr', 'spaces'>({
   prop: 'mr',
+  cssProperty: 'marginRight',
   key: 'spaces'
 })
 export const p = style<CSS.PaddingProperty<TLength>, 'p', 'spaces'>({
   prop: 'p',
+  cssProperty: 'padding',
   key: 'spaces'
 })
 export const pt = style<CSS.PaddingTopProperty<TLength>, 'pt', 'spaces'>({
   prop: 'pt',
+  cssProperty: 'paddingTop',
   key: 'spaces'
 })
 export const pb = style<CSS.PaddingBottomProperty<TLength>, 'pb', 'spaces'>({
   prop: 'pb',
+  cssProperty: 'paddingBottom',
   key: 'spaces'
 })
 export const pl = style<CSS.PaddingLeftProperty<TLength>, 'pl', 'spaces'>({
   prop: 'pl',
+  cssProperty: 'paddingLeft',
   key: 'spaces'
 })
 export const pr = style<CSS.PaddingRightProperty<TLength>, 'pr', 'spaces'>({
   prop: 'pr',
+  cssProperty: 'paddingRight',
   key: 'spaces'
 })
 
@@ -296,6 +306,7 @@ export const opacity = style<CSS.GlobalsNumber, 'opacity', string>({
 // color aliases
 export const bg = style<CSS.BackgroundColorProperty, 'bg', 'colors'>({
   prop: 'bg',
+  cssProperty: 'backgroundColor',
   key: 'colors'
 })
 
