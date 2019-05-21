@@ -1,0 +1,28 @@
+{
+  "name": "@properly-styled/emotion",
+  "version": "0.0.2",
+  "author": "Jarid Margolin <jaridmargolin@gmail.com>",
+  "description": "Prop based component styling for emotion.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "rollup -c ../../config/rollup.js",
+    "dev": "rollup -c ../../config/rollup.js -w"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@properly-styled/core": "^0.0.2"
+  },
+  "devDependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10"
+  },
+  "peerDependencies": {
+    "@emotion/core": "^10",
+    "@emotion/styled": "^10"
+  }
+}
