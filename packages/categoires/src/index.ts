@@ -36,6 +36,24 @@ import {
   fontSize,
   fontStyle,
   fontWeight,
+  grid,
+  gridArea,
+  gridAutoColumns,
+  gridAutoFlow,
+  gridAutoRows,
+  gridColumn,
+  gridColumnEnd,
+  gridColumnGap,
+  gridColumnStart,
+  gridGap,
+  gridRow,
+  gridRowEnd,
+  gridRowGap,
+  gridRowStart,
+  gridTemplate,
+  gridTemplateAreas,
+  gridTemplateColumns,
+  gridTemplateRows,
   height,
   justifyContent,
   justifyItems,
@@ -69,6 +87,9 @@ import {
   paddingTop,
   pb,
   pl,
+  placeContent,
+  placeItems,
+  placeSelf,
   position,
   pr,
   pt,
@@ -148,12 +169,39 @@ export const coloringStyles = compose(
   bg
 )
 
-// flex item
-export const flexItemStyles = compose(
-  flex,
+// grid container
+export const gridContainerStyles = compose(
+  grid,
+  gridTemplateColumns,
+  gridTemplateRows,
+  gridTemplateAreas,
+  gridTemplate,
+  gridColumnGap,
+  gridRowGap,
+  gridGap,
+  gridAutoColumns,
+  gridAutoRows,
+  gridAutoFlow,
+  alignContent,
+  alignItems,
+  justifyContent,
+  justifyItems,
+  placeContent,
+  placeItems
+)
+
+// grid item
+export const gridItemStyles = compose(
+  gridColumnStart,
+  gridColumnEnd,
+  gridRowStart,
+  gridRowEnd,
+  gridColumn,
+  gridRow,
+  gridArea,
   justifySelf,
   alignSelf,
-  order
+  placeSelf
 )
 
 // flex container
@@ -164,7 +212,18 @@ export const flexContainerStyles = compose(
   alignContent,
   alignItems,
   justifyContent,
-  justifyItems
+  justifyItems,
+  placeContent,
+  placeItems
+)
+
+// flex item
+export const flexItemStyles = compose(
+  flex,
+  justifySelf,
+  alignSelf,
+  placeSelf,
+  order
 )
 
 // typography

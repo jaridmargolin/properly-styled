@@ -224,22 +224,115 @@ CSS.MinHeightProperty<TLength>,
   key: 'minHeights'
 })
 
-// flex item
-export const flex = style<CSS.FlexProperty<TLength>, 'flex', string>({
-  prop: 'flex'
+// grid container
+export const grid = style<CSS.GridProperty, 'grid', string>({
+  prop: 'grid'
 })
-export const justifySelf = style<
-CSS.JustifySelfProperty,
-'justifySelf',
+export const gridTemplateColumns = style<
+CSS.GridTemplateColumnsProperty<TLength>,
+'gridTemplateColumns',
 string
 >({
-  prop: 'justifySelf'
+  prop: 'gridTemplateColumns'
 })
-export const alignSelf = style<CSS.AlignSelfProperty, 'alignSelf', string>({
-  prop: 'alignSelf'
+export const gridTemplateRows = style<
+CSS.GridTemplateRowsProperty<TLength>,
+'gridTemplateRows',
+string
+>({
+  prop: 'gridTemplateRows'
 })
-export const order = style<CSS.GlobalsNumber, 'order', string>({
-  prop: 'order'
+export const gridTemplateAreas = style<
+CSS.GridTemplateAreasProperty,
+'gridTemplateAreas',
+string
+>({
+  prop: 'gridTemplateAreas'
+})
+export const gridTemplate = style<
+CSS.GridTemplateProperty,
+'gridTemplate',
+string
+>({
+  prop: 'gridTemplate'
+})
+export const gridColumnGap = style<
+CSS.GridColumnGapProperty<TLength>,
+'gridColumnGap',
+'spaces'
+>({
+  prop: 'gridColumnGap',
+  key: 'spaces'
+})
+export const gridRowGap = style<
+CSS.GridRowGapProperty<TLength>,
+'gridRowGap',
+'spaces'
+>({
+  prop: 'gridRowGap',
+  key: 'spaces'
+})
+export const gridGap = style<CSS.GridGapProperty<TLength>, 'gridGap', 'spaces'>(
+  {
+    prop: 'gridGap',
+    key: 'spaces'
+  }
+)
+export const gridAutoColumns = style<
+CSS.GridAutoColumnsProperty<TLength>,
+'gridAutoColumns',
+string
+>({
+  prop: 'gridAutoColumns'
+})
+export const gridAutoRows = style<
+CSS.GridAutoRowsProperty<TLength>,
+'gridAutoRows',
+string
+>({
+  prop: 'gridAutoRows'
+})
+export const gridAutoFlow = style<
+CSS.GridAutoFlowProperty,
+'gridAutoFlow',
+string
+>({
+  prop: 'gridAutoFlow'
+})
+
+// grid item
+export const gridColumnStart = style<
+CSS.GridColumnStartProperty,
+'gridColumnStart',
+string
+>({
+  prop: 'gridColumnStart'
+})
+export const gridColumnEnd = style<
+CSS.GridColumnEndProperty,
+'gridColumnEnd',
+string
+>({
+  prop: 'gridColumnEnd'
+})
+export const gridRowStart = style<
+CSS.GridRowStartProperty,
+'gridRowStart',
+string
+>({
+  prop: 'gridRowStart'
+})
+export const gridRowEnd = style<CSS.GridRowEndProperty, 'gridRowEnd', string>({
+  prop: 'gridRowEnd'
+})
+export const gridColumn = style<CSS.GridColumnProperty, 'gridColumn', string>({
+  prop: 'gridColumn'
+})
+export const gridRow = style<CSS.GridRowProperty, 'gridRow', string>({
+  prop: 'gridRow'
+})
+export const gridArea = style<CSS.GridAreaProperty, 'gridArea', string>({
+  prop: 'gridArea'
 })
 
 // flex container
@@ -260,6 +353,16 @@ string
 export const flexWrap = style<CSS.FlexWrapProperty, 'flexWrap', string>({
   prop: 'flexWrap'
 })
+
+// flex item
+export const flex = style<CSS.FlexProperty<TLength>, 'flex', string>({
+  prop: 'flex'
+})
+export const order = style<CSS.GlobalsNumber, 'order', string>({
+  prop: 'order'
+})
+
+// align container
 export const alignContent = style<
 CSS.AlignContentProperty,
 'alignContent',
@@ -283,6 +386,31 @@ CSS.JustifyItemsProperty,
 string
 >({
   prop: 'justifyItems'
+})
+export const placeContent = style<
+CSS.PlaceContentProperty,
+'placeContent',
+string
+>({
+  prop: 'placeContent'
+})
+export const placeItems = style<CSS.PlaceItemsProperty, 'placeItems', string>({
+  prop: 'placeItems'
+})
+
+// align items
+export const justifySelf = style<
+CSS.JustifySelfProperty,
+'justifySelf',
+string
+>({
+  prop: 'justifySelf'
+})
+export const alignSelf = style<CSS.AlignSelfProperty, 'alignSelf', string>({
+  prop: 'alignSelf'
+})
+export const placeSelf = style<CSS.PlaceSelfProperty, 'placeSelf', string>({
+  prop: 'placeSelf'
 })
 
 // color
