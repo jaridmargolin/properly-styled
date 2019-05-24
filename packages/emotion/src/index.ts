@@ -4,7 +4,7 @@
 
 // 3rd party
 import styled from '@emotion/styled'
-import { StyledComponent } from '@emotion/styled-base/types'
+import { StyledComponent, StyledOptions } from '@emotion/styled-base/types'
 
 // properly-styled
 import { compose } from '@properly-styled/core'
@@ -42,10 +42,11 @@ export type Styled<Tag, StyleProps> = StyledComponent<
  * -------------------------------------------------------------------------- */
 
 const properlyStyled = <Tag extends React.ComponentType<any> | keyof JSXInEl>(
-  tag: Tag
+  tag: Tag,
+  options?: StyledOptions
 ) => <Generators extends any[]>(...generators: Generators) => {
   const composed = compose(...generators)
-  const component = styled(tag as any)(composed)
+  const component = styled(tag as any, options)(composed)
 
   return component as Styled<Tag, typeof composed['props']>
 }
