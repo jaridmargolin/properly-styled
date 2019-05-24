@@ -110,14 +110,10 @@ describe('properly-styled', () => {
         margin: { default: 's0', desktop: 's4' }
       })
 
-      expect(result).toEqual([
-        {
-          '@media screen and (min-width: 0px)': { margin: '0px' }
-        },
-        {
-          '@media screen and (min-width: 1060px)': { margin: '4px' }
-        }
-      ])
+      expect(result).toEqual({
+        '@media screen and (min-width: 0px)': { margin: '0px' },
+        '@media screen and (min-width: 1060px)': { margin: '4px' }
+      })
     })
   })
 
@@ -144,6 +140,7 @@ describe('properly-styled', () => {
           return { [options.prop]: props[options.prop] }
         }
 
+        generate.props = undefined as any
         generate.prop = options.prop
         generate.callCount = 0
         return generate
@@ -214,22 +211,18 @@ describe('properly-styled', () => {
         font: { default: 'f12.400', desktop: 'f14.600' }
       })
 
-      expect(result).toEqual([
-        {
-          '@media screen and (min-width: 0px)': {
-            fontSize: '12px',
-            fontWeight: '400',
-            lineHeight: '16px'
-          }
+      expect(result).toEqual({
+        '@media screen and (min-width: 0px)': {
+          fontSize: '12px',
+          fontWeight: '400',
+          lineHeight: '16px'
         },
-        {
-          '@media screen and (min-width: 1060px)': {
-            fontSize: '14px',
-            fontWeight: '600',
-            lineHeight: '16px'
-          }
+        '@media screen and (min-width: 1060px)': {
+          fontSize: '14px',
+          fontWeight: '600',
+          lineHeight: '16px'
         }
-      ])
+      })
     })
   })
 })

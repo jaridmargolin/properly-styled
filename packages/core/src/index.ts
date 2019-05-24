@@ -66,7 +66,7 @@ export type PropInput<
 
 export type Rule<RuleValue> = Record<string, RuleValue>
 export type MediaRule<RuleValue> = Record<string, Rule<RuleValue>>
-export type Rules<RuleValue> = null | Rule<RuleValue> | MediaRule<RuleValue>[]
+export type Rules<RuleValue> = null | Rule<RuleValue> | MediaRule<RuleValue>
 
 /* -----------------------------------------------------------------------------
  * utils
@@ -106,13 +106,16 @@ const generateStyles = <RuleValue, ThemeKey extends string>(
     [keyof Breakpoints<string>, PropInput<RuleValue, ThemeKey>]
   >
 
-  return propBreakpoints.map<MediaRule<RuleValue>>(([key, breakpointValue]) => {
+  const breakpointStyles: MediaRule<RuleValue> = {}
+  propBreakpoints.forEach(([key, breakpointValue]) => {
     const mediaQuery = `@media screen and (min-width: ${breakpoints[key]})`
 
-    return typeof breakpointValue === 'undefined'
-      ? {}
-      : { [mediaQuery]: generateFn(breakpointValue as ValidIndex) }
+    if (typeof breakpointValue !== 'undefined') {
+      breakpointStyles[mediaQuery] = generateFn(breakpointValue as ValidIndex)
+    }
   })
+
+  return breakpointStyles
 }
 
 /* -----------------------------------------------------------------------------
