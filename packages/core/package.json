@@ -1,6 +1,6 @@
 {
   "name": "@properly-styled/core",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Jarid Margolin <jaridmargolin@gmail.com>",
   "description": "Prop based component styling.",
   "license": "MIT",

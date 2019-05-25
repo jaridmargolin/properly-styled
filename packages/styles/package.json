@@ -1,6 +1,6 @@
 {
   "name": "@properly-styled/styles",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Jarid Margolin <jaridmargolin@gmail.com>",
   "description": "Common style definitions for use with properly-styled",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@properly-styled/core": "^0.0.5",
+    "@properly-styled/core": "^0.0.6",
     "csstype": "^2.6.4"
   },
   "gitHead": "0f258a32cd047b8d42dca1b300a865de6c410371"
