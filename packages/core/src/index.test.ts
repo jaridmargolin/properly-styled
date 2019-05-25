@@ -4,7 +4,7 @@
  * -------------------------------------------------------------------------- */
 
 // lib
-import { compose, style, variant } from './index'
+import { componentVariant, compose, style, variant } from './index'
 
 /* -----------------------------------------------------------------------------
  * reusable
@@ -179,6 +179,7 @@ describe('properly-styled', () => {
       expect(flex.callCount).toEqual(0)
     })
   })
+
   describe('variant', () => {
     test('returns generate fn with prop property', () => {
       const font = variant({ prop: 'font', key: 'fonts' })
@@ -187,6 +188,7 @@ describe('properly-styled', () => {
       expect(font.prop).toBe('font')
     })
   })
+
   describe('variant.generate', () => {
     test('returns null if prop not passed', () => {
       const font = variant({ prop: 'font', key: 'fonts' })
@@ -221,6 +223,91 @@ describe('properly-styled', () => {
           fontSize: '14px',
           fontWeight: '600',
           lineHeight: '16px'
+        }
+      })
+    })
+  })
+
+  describe('componentVariant', () => {
+    test('returns generate fn with prop property', () => {
+      const sizing = componentVariant({
+        prop: 'sizing',
+        variants: {
+          small: { paddingLeft: '8px', paddingRight: '8px' }
+        }
+      })
+
+      expect(typeof sizing).toBe('function')
+      expect(sizing.prop).toBe('sizing')
+    })
+  })
+
+  describe('componentVariant.generate', () => {
+    test('returns null if prop not passed', () => {
+      const sizing = componentVariant({
+        prop: 'sizing',
+        variants: {
+          small: { paddingLeft: '8px', paddingRight: '8px' }
+        }
+      })
+
+      expect(sizing({ theme })).toBe(null)
+    })
+
+    test('returns props from variant obj', () => {
+      const sizing = componentVariant({
+        prop: 'sizing',
+        variants: {
+          small: { paddingLeft: '8px', paddingRight: '8px' },
+          medium: { paddingLeft: '12px', paddingRight: '12px' }
+        }
+      })
+
+      expect(sizing({ theme, sizing: 'small' })).toEqual({
+        paddingLeft: '8px',
+        paddingRight: '8px'
+      })
+    })
+
+    test('returns props from variant fn', () => {
+      const sizing = componentVariant({
+        prop: 'sizing',
+        variants: {
+          small: ({ theme }: any) => ({
+            paddingLeft: theme.spaces.s4,
+            paddingRight: theme.spaces.s4
+          })
+        }
+      })
+
+      expect(sizing({ theme, sizing: 'small' })).toEqual({
+        paddingLeft: '4px',
+        paddingRight: '4px'
+      })
+    })
+
+    test('returns responsive values', () => {
+      const sizing = componentVariant({
+        prop: 'sizing',
+        variants: {
+          small: { paddingLeft: '8px', paddingRight: '8px' },
+          medium: { paddingLeft: '12px', paddingRight: '12px' }
+        }
+      })
+
+      const result = sizing({
+        theme,
+        sizing: { default: 'small', desktop: 'medium' }
+      })
+
+      expect(result).toEqual({
+        '@media screen and (min-width: 0px)': {
+          paddingLeft: '8px',
+          paddingRight: '8px'
+        },
+        '@media screen and (min-width: 1060px)': {
+          paddingLeft: '12px',
+          paddingRight: '12px'
         }
       })
     })

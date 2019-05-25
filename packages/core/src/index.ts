@@ -204,6 +204,59 @@ export const variant = <PropKey extends string, ThemeKey extends ThemeKeys>({
 }
 
 /* -----------------------------------------------------------------------------
+ * componentVariant
+ * -------------------------------------------------------------------------- */
+
+export type ComponentProp<PropKey extends string, Variants> = {
+  [k in PropKey]?: ComponentPropValue<Variants>
+}
+
+export type ComponentPropValue<Variants> = ResponsiveValue<
+  Extract<keyof Variants, string>
+>
+
+export interface ComponentVariantOptions<PropKey, Variants> {
+  prop: PropKey
+  variants: Variants
+}
+
+export interface ComponentVariant<PropKey extends string, Variants> {
+  (props: WithTheme<ComponentProp<PropKey, Variants>>): Rules<any>
+  props: ComponentProp<PropKey, Variants>
+  prop: string
+  [k: string]: any
+}
+
+export const componentVariant = <
+  PropKey extends string,
+  Variants extends { [key: string]: any }
+>({
+  prop,
+  variants
+}: ComponentVariantOptions<PropKey, Variants>) => {
+  const generate: ComponentVariant<PropKey, Variants> = ({
+    theme,
+    ...rest
+  }) => {
+    const value = (rest as Record<string, any>)[prop]
+
+    return generateStyles<any, string>(value, theme, (val) => {
+      if (typeof variants[val] === 'function') {
+        return variants[val]({ theme, ...rest })
+      } else {
+        return variants[val]
+      }
+    })
+  }
+
+  // hack to allow easily grabbing props Type from Variant
+  generate.props = undefined as any
+
+  generate.prop = prop
+  return generate
+}
+
+/* -----------------------------------------------------------------------------
  * compose
  * -------------------------------------------------------------------------- */
 
